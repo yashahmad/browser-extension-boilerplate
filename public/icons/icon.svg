@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Sidebar overlay icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#128a80" />
+      <stop offset="1" stop-color="#0e6b64" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)" />
+  <rect x="608" y="240" width="176" height="544" rx="64" fill="#ffffff" />
+  <rect x="240" y="304" width="272" height="64" rx="32" fill="#ffffff" opacity="0.85" />
+  <rect x="240" y="448" width="208" height="64" rx="32" fill="#ffffff" opacity="0.55" />
+  <rect x="240" y="592" width="240" height="64" rx="32" fill="#ffffff" opacity="0.35" />
+</svg>

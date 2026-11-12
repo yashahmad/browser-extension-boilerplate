@@ -1,0 +1,29 @@
+{
+  "name": "sidebar-overlay-starter",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Chrome extension starter: a React sidebar overlay that slides in from the right of any page.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "npm run clean && concurrently -k -n ext,content -c blue,magenta \"vite build --watch\" \"vite build -c vite.content.config.ts --watch\"",
+    "dev:ui": "vite --open /preview.html",
+    "build": "npm run clean && vite build && vite build -c vite.content.config.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "concurrently": "^10.0.7",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}
