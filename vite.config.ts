@@ -17,6 +17,10 @@ export default defineConfig({
     rollupOptions: {
       input: { background: backgroundEntry },
       output: {
+        // Classic IIFE, not an ES module. Safari's MV3 service-worker loader is
+        // unreliable with `background.type: "module"`, and the worker has no
+        // imports at runtime anyway.
+        format: 'iife',
         entryFileNames: '[name].js',
         chunkFileNames: 'chunks/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash][extname]',

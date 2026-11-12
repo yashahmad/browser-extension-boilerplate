@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Chrome extension starter: a React sidebar overlay that slides in from the right of any page.",
+  "description": "Browser extension starter: a React sidebar overlay that slides in from the right of any page.",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "npm run clean && concurrently -k -n ext,content -c blue,magenta \"vite build --watch\" \"vite build -c vite.content.config.ts --watch\"",
     "dev:ui": "vite --open /preview.html",
     "build": "npm run clean && vite build && vite build -c vite.content.config.ts",
+    "safari": "npm run build && node scripts/package-safari.mjs",
+    "safari:zip": "node scripts/package-safari.mjs",
     "typecheck": "tsc --noEmit",
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
   },

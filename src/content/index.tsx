@@ -72,4 +72,26 @@ chrome.runtime.onMessage.addListener((message: unknown) => {
   if (isSidebarMessage(message)) toggleOpen();
 });
 
+// Safari does not always dispatch the toolbar action to a background context.
+// Listening in the content script keeps the shortcut working even when the
+// background script does not run.
+window.addEventListener(
+  'keydown',
+  (event) => {
+    if (
+      event.repeat ||
+      !event.altKey ||
+      !event.shiftKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.code !== 'KeyS'
+    ) {
+      return;
+    }
+    event.preventDefault();
+    toggleOpen();
+  },
+  true,
+);
+
 boot();
